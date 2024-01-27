@@ -1,8 +1,8 @@
 FROM debian:bullseye-slim
 RUN apt-get update && apt-get install -y curl
 
-COPY ninja-0.9.13-x86_64-unknown-linux-musl.tar /ninja.tar
-RUN tar -xzf /ninja.tar
+COPY ninja-0.9.13-x86_64-unknown-linux-musl.tar.gz /ninja.tar.gz
+RUN tar -xzf /ninja.tar.gz
 
 ENV LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=C
 
