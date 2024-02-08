@@ -13,5 +13,5 @@ RUN mkdir /.auth && chmod 777 /.auth
 RUN mkdir /.platform && chmod 777 /.platform
 
 COPY /hars /harfile
-CMD ["/bin/ninja", "run", "--arkose-gpt4-har-dir=/harfile", "--arkose-solver Fcsrv", "--arkose-solver-endpoint https://fcsrv-severless.onrender.com/task"]
-                          //提问使用Har特征避免人机验证          //还是出人机用打码模型      //使用Render部署的另一个项目地址
+COPY /login-hars /login-harfile
+CMD ["/bin/ninja", "run", "--arkose-gpt4-har-dir=/harfile", "--arkose-auth-har-dir=/login-harfile", "--arkose-solver Fcsrv", "--arkose-solver-endpoint https://fcsrv-severless.onrender.com/task"]
