@@ -14,4 +14,4 @@ RUN mkdir /.platform && chmod 777 /.platform
 
 COPY /hars /harfile
 COPY /login-hars /login-harfile
-CMD ["/bin/ninja", "run", "--arkose-gpt4-har-dir=/harfile", "--arkose-auth-har-dir=/login-harfile", " --arkose-solver-key=12345678", "--arkose-solver=fcsrv", "--arkose-solver-endpoint=https://fcsrv-severless.onrender.com/task"]
+CMD ["/bin/ninja", "run", "--arkose-gpt4-har-dir=/harfile", "--arkose-auth-har-dir=/login-harfile"]
