@@ -39,10 +39,10 @@ COPY --from=builder /tmp/ninja /bin/ninja
 
 #RUN cp ninja /bin/ninja
 RUN mkdir /.gpt3 && chmod 777 /.gpt3
-RUN mkdir /.gpt4 && chmod 777 /.gpt4
-RUN mkdir /.auth && chmod 777 /.auth
+#RUN mkdir /.gpt4 && chmod 777 /.gpt4
+#RUN mkdir /.auth && chmod 777 /.auth
 RUN mkdir /.platform && chmod 777 /.platform
 
-COPY /hars /harfile
-COPY /login-hars /login-harfile
-CMD ["/bin/ninja", "run", "--arkose-gpt4-har-dir=/harfile", "--arkose-auth-har-dir=/login-harfile"]
+COPY /hars /.gpt4
+COPY /login-hars /.auth
+CMD ["/bin/ninja", "run"]
