@@ -45,11 +45,11 @@ RUN mkdir /.gpt3 && chmod 777 /.gpt3 && \
     mkdir /.auth && chmod 777 /.auth && \
     mkdir /.platform && chmod 777 /.platform
 
-COPY /hars /harfile
-RUN chmod 777 /harfile
-COPY /login-hars /login-harfile
-RUN chmod 777 /login-harfile
+COPY /hars /.gpt4
+
+COPY /login-hars /.auth
+
 
 # 定义容器启动时执行的命令及其参数
 ENTRYPOINT ["/bin/ninja"]
-CMD ["run", "--arkose-gpt4-har-dir=/harfile", "--arkose-auth-har-dir=/login-harfile", "--arkose-solver-key=12345678", "--arkose-solver=fcsrv", "--arkose-solver-endpoint=https://fcsrv-severless.onrender.com/task"]
+CMD ["run", "--arkose-solver-key=12345678", "--arkose-solver=fcsrv", "--arkose-solver-endpoint=https://fcsrv-severless.onrender.com/task"]
