@@ -37,7 +37,7 @@ ENV LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.
 # 从构建阶段复制ninja二进制文件到最终镜像
 COPY --from=builder /tmp/ninja /bin/ninja
 
-RUN cp ninja /bin/ninja
+#RUN cp ninja /bin/ninja
 RUN mkdir /.gpt3 && chmod 777 /.gpt3
 RUN mkdir /.gpt4 && chmod 777 /.gpt4
 RUN mkdir /.auth && chmod 777 /.auth
