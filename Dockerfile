@@ -3,7 +3,7 @@
 # 使用Alpine 3.16.6作为基础镜像
 FROM alpine:3.16.6 as builder
 
-ARG VERSION
+ARG VERSION=0.9.31
 ARG TARGETPLATFORM
 
 # 根据目标平台确定架构和libc环境
